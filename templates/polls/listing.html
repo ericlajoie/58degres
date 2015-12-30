@@ -1,0 +1,36 @@
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+<style>
+.images a img {
+    opacity: 0.75;/* l'opacite que vous voulez au depart */
+    border: none;/* enlever les border d'une image en lien */
+    -ms-filter: "prodig:DXImageTransform.Microsoft.Alpha(Opacity=75)"; /* Hack IE8 */
+    filter: alpha(opacity = 75); /* Hack IE 5-7 */
+    -webkit-transition: opacity 0.5s ease-in-out;/* transition pour Chrome et Safari */
+    -moz-transition: opacity 0.5s ease-in-out;/* transition pour Firefox */
+    -o-transition: opacity 0.5s ease-in-out;/* transition pour Opéra */
+    transition: opacity 0.5s ease-in-out; /* on écrit cette ligne à la fin de façon à ce que ce soit elle qui soit prise en compte lorsque l'attribut transition sera pris en compte par tous les navigateurs */
+ 
+}
+ 
+.images a:hover img, #images a:focus img {
+    opacity: 0.95; /* opacite au survol */
+    -ms-filter:"prodig:DXImageTransform.Microsoft.Alpha(Opacity=95)"; /* Hack IE 8 */
+    filter: alpha(opacity = 95); /* Hack IE 5-7 */
+}
+</style>
+
+<div id="listing" class="toggle_page">
+	<div class="container" style="margin-top:120px">
+		{% for i in project_list %}
+		<div class="col-md-4 images"> <a href="/_58deg/{{artist}}/{{i}}/"> <img src="/static/_58deg/{{artist}}/{{i}}.jpg" style="width:100%;margin-bottom:20px"></a></div>
+		{% endfor %}
+
+	</div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,100 @@
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+
+<script type="text/javascript" src="/static/js/jquery-2.0.2.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+
+
+<style>
+body { padding-top: 0px; }
+.header_menu { color:#ec19b1; font-size:20px; font-family:Monaco;}
+.adresse {color:black; font-family:Monaco;}
+.date {color:#ec19b1; font-family:Monaco;}
+.listing_title { color:#ec19b1; font-size:35px; text-align:center }
+.carousel_control {background: white !important;}
+.carousel_arrow {color:#ec19b1;}
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:white;">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li><a href="/_58deg"> 
+					<div>
+						<div class="header_menu">58° GALBES</div>
+						<div class="date_heure">
+							<span id="date_heure_id1" class="date"></span><span class="adresse">_</span><span id="date_heure_id2" class="date"></span>
+						</div> 
+						<div class="adresse"> 17 Chemin Vieux du Castel </div>
+						<div class="adresse"> 81270 FRANCE</div>
+					</div>
+				</a> </li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" style="margin-right:100px;margin-top:50px">
+			<li class="toggle_menu"><a href="/_58deg/58deg"> <div class="header_menu"> 58° galbés </div></a> </li>
+			<li><a href="/_58deg/atelier"> <div class="header_menu"> L'atelier </div></a> </li>
+			<li><a href="/_58deg/en-ce-moment"> <div class="header_menu"> En ce moment </div></a> </li>
+			<li><a href="/_58deg/clem"> <div class="header_menu"> Clem </div></a></li>
+			<li><a href="/_58deg/loule"> <div class="header_menu"> ô Loule </div></a> </li>
+			<li><a href="/_58deg/tibs"> <div class="header_menu"> Tib's </div></a></li>
+			<li><a href="#"> <div class="header_menu"> Shop </div></a></li>
+			<li><a href="http://58degres-galbes.tumblr.com" target="_blank"><div class="header_menu" > Blog </div></a></li>
+		</ul>
+	
+	</div>
+</nav>
+
+<!--script type="text/javascript">window.onload = date_heure('date_heure_id');</script-->
+<script>
+
+function date_heure(id1, id2)
+{
+        date = new Date;
+        annee = date.getFullYear();
+        moi = date.getMonth();
+        mois = new Array('Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;t', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre');
+        j = date.getDate();
+        jour = date.getDay();
+        jours = new Array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        //resultat = 'Nous sommes le '+jours[jour]+' '+j+' '+mois[moi]+' '+annee+' il est '+h+':'+m+':'+s;
+		resultat1 = j+'.'+moi+'.'+annee;
+		resultat2 = h+':'+m+':'+s;
+        document.getElementById(id1).innerHTML = resultat1;
+		document.getElementById(id2).innerHTML = resultat2;
+        setTimeout('date_heure("'+id1+'","'+id2+'");','1000');
+}
+
+$(".toggle_menu").click(function() {
+  $(".toggle_page").hide()
+  if (!$this.hasClass('active')) {
+            $this.addClass('active');
+  }
+});
+
+$(document).ready(function() { 
+
+date_heure('date_heure_id1', 'date_heure_id2');
+
+
+
+});
+</script>
+
+
+
+{% block content %}
+            {% endblock %}
