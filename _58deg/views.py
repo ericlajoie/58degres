@@ -9,6 +9,9 @@ def index(request):
 def atelier(request):
 	return render(request, 'polls/atelier.html')
 	
+def en_ce_moment(request):
+	return render(request, 'polls/en-ce-moment.html')
+	
 def detail(request, artist, art_id):
 	#return HttpResponse("You're looking at <h1> %s </h1>" % art_id)
 	img_list = os.listdir("static/_58deg/%s/%s/" % (artist,art_id))
