@@ -26,7 +26,13 @@
 <div id="listing" class="toggle_page">
 	<div class="container" style="margin-top:120px">
 		{% for i in project_list %}
+		{% if forloop.counter0 |divisibleby:3 %}
+		<div class="row">
+		{% endif}
 		<div class="col-md-4 images"> <a href="/_58deg/{{artist}}/{{i}}/"> <img src="/static/_58deg/{{artist}}/{{i}}.jpg" style="width:100%;margin-bottom:20px"></a></div>
+		{% if forloop.counter0 |divisibleby:3 %}
+		</div>
+		{% endif}
 		{% endfor %}
 
 	</div>
