@@ -7,7 +7,7 @@
 
 <style>
 body { padding-top: 0px; }
-.logo-adresse {color:#ec19b1; font-family:Monaco; font-size: 20px;}
+.logo-adresse {color:#ec19b1 !important; font-family:Monaco; font-size: 20px;}
 .header_menu { color:#ec19b1; font-size:20px; font-family:Monaco;}
 .adresse {color:black; font-family:Monaco;}
 .date {color:#ec19b1; font-family:Monaco;}
@@ -15,16 +15,16 @@ body { padding-top: 0px; }
 .listing_title { color:#ec19b1; font-size:35px; text-align:center }
 .carousel_control {background: white !important;}
 .carousel_arrow {color:#ec19b1;}
-.toggle_page {margin-top:150px;}
+.toggle_page {margin-top:0px;}
 
 </style>
 
-<nav class="navbar navbar-default navbar-fixed-top" style="background-color:white;">
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color:white;" id="topnavbar">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
 			<li><a href="/_58deg" class="logo-adresse"> 
 					<div>
-						<div class=""">58°GALBES</div>
+						<div class="">58°GALBES</div>
 						<div class="date_heure">
 							<span id="date_heure_id1" class="date"></span><span class="adresse"> _ </span><span id="date_heure_id2" class="date"></span>
 						</div> 
@@ -100,10 +100,14 @@ $(".toggle_menu").click(function() {
 $(document).ready(function() { 
 
 date_heure('date_heure_id1', 'date_heure_id2');
-
-
+        $(document.body).css('padding-top', $('#topnavbar').height() + 10);
+        $(window).resize(function(){
+            $(document.body).css('padding-top', $('#topnavbar').height() + 10);
+        });
 
 });
+
+
 </script>
 
 
