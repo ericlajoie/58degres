@@ -13,6 +13,7 @@ body { padding-top: 0px; }
 .listing_title { color:#ec19b1; font-size:35px; text-align:center }
 .carousel_control {background: white !important;}
 .carousel_arrow {color:#ec19b1;}
+.toggle_page {margin-top:150 px;}
 </style>
 
 <nav class="navbar navbar-default navbar-fixed-top" style="background-color:white;">
@@ -20,21 +21,21 @@ body { padding-top: 0px; }
 		<ul class="nav navbar-nav">
 			<li><a href="/_58deg"> 
 					<div>
-						<div class="header_menu">58° GALBES</div>
+						<div class="header_menu">58°GALBES</div>
 						<div class="date_heure">
-							<span id="date_heure_id1" class="date"></span><span class="adresse">_</span><span id="date_heure_id2" class="date"></span>
+							<span id="date_heure_id1" class="date"></span><span class="adresse"> _ </span><span id="date_heure_id2" class="date"></span>
 						</div> 
-						<div class="adresse"> 17 Chemin Vieux du Castel </div>
-						<div class="adresse"> 81270 FRANCE</div>
+						<div class="adresse"> 2 rue Philippe Noiret </div>
+						<div class="adresse"> 81600 GAILLAC - FRANCE</div>
 					</div>
 				</a> </li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right" style="margin-right:100px;margin-top:50px">
-			<li class="toggle_menu"><a href="/_58deg/58deg"> <div class="header_menu"> 58° galbés </div></a> </li>
+			<li class="toggle_menu"><a href="/_58deg/58deg"> <div class="header_menu"> 58°Galbés </div></a> </li>
 			<li><a href="/_58deg/atelier"> <div class="header_menu"> L'atelier </div></a> </li>
 			<li><a href="/_58deg/en-ce-moment"> <div class="header_menu"> En ce moment </div></a> </li>
 			<li><a href="/_58deg/clem"> <div class="header_menu"> Clem </div></a></li>
-			<li><a href="/_58deg/loule"> <div class="header_menu"> ô Loule </div></a> </li>
+			<li><a href="/_58deg/loule"> <div class="header_menu"> Loule </div></a> </li>
 			<li><a href="/_58deg/tibs"> <div class="header_menu"> Tib's </div></a></li>
 			<li><a href="#"> <div class="header_menu"> Shop </div></a></li>
 			<li><a href="http://58degres-galbes.tumblr.com" target="_blank"><div class="header_menu" > Blog </div></a></li>
@@ -50,7 +51,7 @@ function date_heure(id1, id2)
 {
         date = new Date;
         annee = date.getFullYear();
-        moi = date.getMonth();
+        moi = date.getMonth() + 1;
         mois = new Array('Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;t', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre');
         j = date.getDate();
         jour = date.getDay();
@@ -70,6 +71,14 @@ function date_heure(id1, id2)
         {
                 s = "0"+s;
         }
+		if(moi<10)
+		{
+			moi = "0"+moi;
+		}
+		if(j<10)
+		{
+			j = "0"+j;
+		}
         //resultat = 'Nous sommes le '+jours[jour]+' '+j+' '+mois[moi]+' '+annee+' il est '+h+':'+m+':'+s;
 		resultat1 = j+'.'+moi+'.'+annee;
 		resultat2 = h+':'+m+':'+s;
