@@ -3,9 +3,11 @@
 
 {% block content %}
 
+{% load staticfiles %}
+
 <div id="home" class="toggle_page">
 		<div class="col-md-8 col-md-offset-2">
-			<img src="/static/_58deg/img/accueil.jpg" style="width:100%"> 
+			<img src="{% static "img/accueil.jpg" %}" style="width:100%"> 
 		</div>
 </div>
 

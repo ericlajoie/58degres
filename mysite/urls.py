@@ -22,4 +22,8 @@ from django.conf.urls.static import static
 urlpatterns = [
 	url(r'^_58deg/', include('_58deg.urls')),
     url(r'^admin/', admin.site.urls),
+#]+static(settings.STATIC_URL, document_root="/")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#] + static('static/')
+
+

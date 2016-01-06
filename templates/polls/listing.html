@@ -2,7 +2,7 @@
 {% extends 'polls/base.html' %}
 
 {% block content %}
-
+{% load staticfiles %}
 <style>
 .images a img {
     opacity: 0.75;/* l'opacite que vous voulez au depart */
@@ -29,7 +29,7 @@
 		{% if forloop.counter0|divisibleby:3 %}
 		<div class="row">
 		{% endif %}
-		<div class="col-md-4 images"> <a href="/_58deg/{{artist}}/{{i}}/"> <img src="/static/_58deg/{{artist}}/{{i}}.jpg" style="width:100%;margin-bottom:20px"></a></div>
+		<div class="col-md-4 images"> <a href="/_58deg/art/{{artist}}/{{i}}/"> <img src="/static/{{artist}}/{{i}}.jpg" style="width:100%;margin-bottom:20px"></a></div>
 		{% if forloop.counter|divisibleby:3 %}
 		</div>
 		{% endif %}

@@ -13,13 +13,14 @@ def en_ce_moment(request):
 	return render(request, 'polls/en-ce-moment.html')
 	
 def detail(request, artist, art_id):
-	#return HttpResponse("You're looking at <h1> %s </h1>" % art_id)
-	img_list = os.listdir("static/_58deg/%s/%s/" % (artist,art_id))
+	
+	#img_list = os.listdir("static/_58deg/")
+	img_list = os.listdir("mysite/static/%s/%s/" % (artist,art_id))
 	return render(request, 'polls/detail.html', {'artist':artist, 'art_id': art_id, 'img_list':img_list})
 	#return HttpResponse("You're looking at <h1> %s </h1>" % artist)
 
 def listing(request, artist):
-	file_list = os.listdir("static/_58deg/%s/" %artist)
+	file_list = os.listdir("mysite/static/%s/" %artist)
 	project_list = []
 	for p in file_list:
 		if (not p.endswith(".jpg")):

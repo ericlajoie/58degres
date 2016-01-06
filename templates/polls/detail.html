@@ -3,7 +3,7 @@
 
 {% block content %}
 
-
+{% load staticfiles %}
 
 <div id="view" class="toggle_page" style="">
 <style>
@@ -36,12 +36,12 @@
 	
 	{% if forloop.counter0 == 0 %}
 	<div class="item active">
-      <img src="/static/_58deg/{{artist}}/{{art_id}}/{{i}}" alt="Chania">
+      <img src="/static/{{artist}}/{{art_id}}/{{i}}" alt="Chania">
     </div>
 	{% else %}
 	
     <div class="item">
-		<img src="/static/_58deg//{{artist}}/{{art_id}}/{{i}}" alt="Chania">
+		<img src="/static/{{artist}}/{{art_id}}/{{i}}" alt="Chania">
     </div>
 	{% endif %}
 
