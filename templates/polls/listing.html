@@ -20,11 +20,45 @@
     opacity: 0.95; /* opacite au survol */
     -ms-filter:"prodig:DXImageTransform.Microsoft.Alpha(Opacity=95)"; /* Hack IE 8 */
     filter: alpha(opacity = 95); /* Hack IE 5-7 */
+	
+ul.tree {
+     list-style-type: none;
+     background: url(/static/img/vline.png) repeat-y;
+     margin: 0;
+     padding: 0;
+   }
+   
+.tree ul {
+     margin-left: 10px;
+	 background: url(/static/img/vline.png) repeat-y;
+   }
+
+tree li {
+     margin: 0;
+     padding: 0 12px;
+   }
 }
+
+.a_li_vertical {margin-left:5px;}
 </style>
 
 <div id="listing" class="toggle_page">
-	<div class="container" style="">
+
+	<div class="col-md-3" style="padding-top:15px">
+		<span style="vertical-align:top;display:inline-block">
+			<ul class="nav nav-pills nav-stacked"> <li><a href="/_58deg/art/58deg"><div class="header_menu_vertical">58°Galbés</div></a></li> </ul>
+		</span>
+		<span>
+		<ul class="nav nav-pills nav-stacked" style="background: url(/static/img/vline.png) repeat-y;display:inline-block;padding-top:40px">
+		
+			<li><a href="/_58deg/art/clem" class="a_li_vertical"><div class="header_menu_vertical">Clem</div></a></li>
+			<li><a href="/_58deg/art/loule" class="a_li_vertical"><div class="header_menu_vertical">Loule</div></a></li>
+			<li><a href="/_58deg/art/tibs" class="a_li_vertical"><div class="header_menu_vertical">Tib's</div></a></li>
+			
+		</ul>
+		</span>
+	</div>
+	<div class="col-md-9" style="">
 		{% for i in project_list %}
 		{% if forloop.counter0|divisibleby:3 %}
 		<div class="row">
