@@ -12,6 +12,12 @@ def atelier(request):
 def en_ce_moment(request):
 	return render(request, 'polls/en-ce-moment.html')
 	
+def contact(request):
+	return render(request, 'polls/contact.html')
+	
+def les_copains(request):
+	return render(request, 'polls/les-copains.html')
+	
 def detail(request, artist, art_id):
 	
 	#img_list = os.listdir("static/_58deg/")

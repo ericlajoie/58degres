@@ -45,18 +45,19 @@ tree li {
 <div id="listing" class="toggle_page">
 
 	<div class="col-md-3" style="padding-top:15px">
-		<span style="vertical-align:top;display:inline-block">
+		<div style="vertical-align:top;display:inline-block">
 			<ul class="nav nav-pills nav-stacked"> <li><a href="/_58deg/art/58deg"><div class="header_menu_vertical">58°Galbés</div></a></li> </ul>
-		</span>
-		<span>
-		<ul class="nav nav-pills nav-stacked" style="background: url(/static/img/vline.png) repeat-y;display:inline-block;padding-top:40px">
+		</div>
+		<div>
+		<!--ul class="nav nav-pills nav-stacked" style="background: url(/static/img/vline.png) repeat-y;display:inline-block;padding-top:40px"-->
+		<ul class="nav nav-pills nav-stacked" style="display:inline-block;padding-top:0px">
 		
-			<li><a href="/_58deg/art/clem" class="a_li_vertical"><div class="header_menu_vertical">Clem</div></a></li>
-			<li><a href="/_58deg/art/loule" class="a_li_vertical"><div class="header_menu_vertical">Loule</div></a></li>
-			<li><a href="/_58deg/art/tibs" class="a_li_vertical"><div class="header_menu_vertical">Tib's</div></a></li>
+			<li><a href="/_58deg/art/clem" class="a_li_vertical"><div class="header_menu_vertical_small">Clem</div></a></li>
+			<li><a href="/_58deg/art/loule" class="a_li_vertical"><div class="header_menu_vertical_small">Loule</div></a></li>
+			<li><a href="/_58deg/art/tibs" class="a_li_vertical"><div class="header_menu_vertical_small">Tib's</div></a></li>
 			
 		</ul>
-		</span>
+		</div>
 	</div>
 	<div class="col-md-9" style="">
 		{% for i in project_list %}
