@@ -28,9 +28,17 @@ body { padding-top: 0px; }
 .header_menu_vertical_small { color:#ec19b1; font-size:16px; font-family:Monaco;}
 .header_a {padding:7px;}
 
+@media (max-width: 768px) {
+  .to_hide_on_small {
+    visibility: hidden !important;
+	display: none !important;
+  }
+}
+
 @media (max-width: 1000px) {
   .only_desktop {
     visibility: hidden !important;
+	display: none !important;
   }
   .ma_navbar {margin-top:0px;}
 }
@@ -48,12 +56,12 @@ body { padding-top: 0px; }
 					<div style="font-size:17px;width:210px;line-height:100%;margin-top:10px;" class="logo-adresse">
 						<div class="fst_header"> <a href="/_58deg" class="color-icon"> 58°GALBÉS </a></div>
 						<div style="line-height:105%">
-							<div class="mail_header">58degres.galbes@gmail.com</div>
-							<div class="date_heure">
+							<div class="mail_header to_hide_on_small">58degres.galbes@gmail.com</div>
+							<div class="date_heure to_hide_on_small">
 								<span id="date_heure_id1" class="date" style="display:inline-block;width:45%"></span><span class="adresse"> _ </span><span id="date_heure_id2" class="date" style="display:inline-block;width:45%;text-align:right"></span>
 							</div> 
-							<div class="adresse1"> 2 rue Philippe Noiret</div>
-							<div class="adresse2"> 81600 GAILLAC - FRANCE</div>
+							<div class="adresse1 to_hide_on_small"> 2 rue Philippe Noiret</div>
+							<div class="adresse2 to_hide_on_small"> 81600 GAILLAC - FRANCE</div>
 							<div style="line-height:150%">
 								<span style="display:inline-block;width:30%;text-align:center">
 									<a href="https://www.facebook.com/58-Degrés-Galbés-1495466197418887/" target="_blank"> <i class="fa fa-facebook color-icon"></i> </a>
@@ -82,7 +90,7 @@ body { padding-top: 0px; }
 			<li class="toggle_menu"><a href="/_58deg/art/58deg"> <div class="header_menu"> 58°Galbés </div></a> </li>
 			<li><a href="/_58deg/atelier" class="header_a"> <div class="header_menu"> L'atelier </div></a> </li>
 			<li><a href="/_58deg/en-ce-moment" class="header_a"> <div class="header_menu"> En ce moment </div></a> </li>
-			<li><a href="/_58deg/les-copains" class="header_a"> <div class="header_menu"> LES COPAINS </div></a> </li>
+			<li><a href="/_58deg/les-copains" class="header_a to_hide_on_small"> <div class="header_menu"> LES COPAINS </div></a> </li>
 			<li><a href="#" class="header_a"> <div class="header_menu"> Shop </div></a></li>
 			<li><a href="http://58degres-galbes.tumblr.com" target="_blank" class="header_a only_desktop"><div class="header_menu" > Blog </div></a></li>
 			<li><a href="/_58deg/contact" class="header_a"> <div class="header_menu"> Contact </div></a> </li>
