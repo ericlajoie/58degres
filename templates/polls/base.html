@@ -48,9 +48,11 @@ body { padding-top: 0px; }
   .ma_navbar {margin-top:97px; !important}
 }
 
+nav.smaller {background-color:red;}
+
 </style>
 
-<nav class="navbar navbar-default navbar-fixed-top visible-desktop visible-phone" style="background-color:transparent;margin-bottom:0px;border:none" id="topnavbar">
+<nav class="topnavbar navbar navbar-default navbar-fixed-top" style="background-color:transparent;margin-bottom:0px;border:none" id="topnavbar">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
 			<li><!--a href="/_58deg" class="logo-adresse"--> 
@@ -154,8 +156,23 @@ $(".toggle_menu").click(function() {
   }
 });
 
+function init() {
+    window.addEventListener('scroll', function(e){
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 0,
+        if (distanceY > shrinkOn) {
+            $("#topnavbar").addClass("smaller");
+        } else {
+            if ($("#topnavbar").hasClass("smaller")) {
+                $("#topnavbar").removeClass("smaller");
+            }
+        }
+    });
+}
+
 $(document).ready(function() { 
 
+init();
 date_heure('date_heure_id1', 'date_heure_id2');
         $(document.body).css('padding-top', $('#topnavbar').height() + 5);
         $(window).resize(function(){
