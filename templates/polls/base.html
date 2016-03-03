@@ -158,8 +158,8 @@ $(".toggle_menu").click(function() {
 
 function init() {
     window.addEventListener('scroll', function(e){
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 0,
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+        var shrinkOn = 0;
         if (distanceY > shrinkOn) {
             $("#topnavbar").addClass("smaller");
         } else {
