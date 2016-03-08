@@ -19,7 +19,6 @@ def les_copains(request):
 	return render(request, 'polls/les-copains.html')
 	
 def detail(request, artist, art_id):
-	
 	#img_list = os.listdir("static/_58deg/")
 	img_list = os.listdir("mysite/static/%s/%s/" % (artist,art_id))
 	detail_text = open("mysite/static/%s/%s.txt" % (artist,art_id)).read()
@@ -33,4 +32,18 @@ def listing(request, artist):
 		if (not p.endswith(".jpg") and not p.endswith(".txt")):
 			project_list.append(p)
 	return render(request, 'polls/listing.html', {'artist':artist, 'project_list':project_list})
+
+def shop_listing(request, shop_category):
+	file_list = os.listdir("mysite/static/%s/" %shop_category)
+	project_list = []
+	for p in file_list:
+		if (not p.endswith(".jpg") and not p.endswith(".txt")):
+			project_list.append(p)
+	return render(request, 'polls/shop_listing.html', {'shop_category':shop_category, 'project_list':project_list})
 	
+	
+def shop_detail(request, shop_category, art_id):
+	img_list = os.listdir("mysite/static/%s/%s/" % (shop_category,art_id))
+	detail_text = open("mysite/static/%s/%s.txt" % (shop_category,art_id)).read()
+	return render(request, 'polls/shop_detail.html', {'shop_category':shop_category, 'art_id': art_id, 'img_list':img_list, 'detail_text':detail_text})
+	#return HttpResponse("You're looking at <h1> %s </h1>" % artist)
