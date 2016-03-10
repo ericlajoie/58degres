@@ -8,6 +8,9 @@ def index(request):
 	
 def atelier(request):
 	return render(request, 'polls/atelier.html')
+
+def merci(request):
+	return render(request, 'polls/merci.html')
 	
 def en_ce_moment(request):
 	return render(request, 'polls/en-ce-moment.html')
