@@ -22,7 +22,6 @@ def les_copains(request):
 	return render(request, 'polls/les-copains.html')
 	
 def detail(request, artist, art_id):
-	#img_list = os.listdir("static/_58deg/")
 	img_list = os.listdir("mysite/static/%s/%s/" % (artist,art_id))
 	detail_text = open("mysite/static/%s/%s.txt" % (artist,art_id)).read()
 	return render(request, 'polls/detail.html', {'artist':artist, 'art_id': art_id, 'img_list':img_list, 'detail_text':detail_text})

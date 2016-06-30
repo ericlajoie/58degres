@@ -49,9 +49,9 @@ tree li {
 	<div class="col-md-2" style="padding-top:15px">
 		<div style="vertical-align:top;display:inline-block">
 			<ul class="nav nav-pills nav-stacked"> 
-				<li><a href="/_58deg/shop/affiches"><div class="header_menu_vertical">Affiches</div></a></li> 
-				<li><a href="/_58deg/shop/gravures"><div class="header_menu_vertical">Gravures</div></a></li> 
-				<li><a href="/_58deg/shop/cartes-postales"><div class="header_menu_vertical">Cartes postales</div></a></li> 
+				<li><a href="/shop/affiches"><div class="header_menu_vertical">Affiches</div></a></li> 
+				<li><a href="/shop/gravures"><div class="header_menu_vertical">Gravures</div></a></li> 
+				<li><a href="/shop/cartes-postales"><div class="header_menu_vertical">Cartes postales</div></a></li> 
 			</ul>
 		</div>
 	</div>
@@ -60,7 +60,7 @@ tree li {
 		{% if forloop.counter0|divisibleby:3 %}
 		<div class="row">
 		{% endif %}
-		<div class="col-md-4 images"> <a href="/_58deg/shop/{{shop_category}}/{{i}}/"> <img src="/static/{{shop_category}}/{{i}}.jpg" style="width:100%;margin-bottom:20px"></a></div>
+		<div class="col-md-4 images"> <a href="/shop/{{shop_category}}/{{i}}/"> <img src="/static/{{shop_category}}/{{i}}.jpg" style="width:100%;margin-bottom:20px"></a></div>
 		{% if forloop.counter|divisibleby:3 %}
 		</div>
 		{% endif %}
