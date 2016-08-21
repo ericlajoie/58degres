@@ -32,7 +32,7 @@ def detail(request, artist, art_id):
 	detail_text = detail_text_str.split('|')
 	
 	for k in range (0,len(detail_text)):
-		detail_text[k] = detail_text[k]#.replace("â€™", "'").encode('iso-8859-1')
+		detail_text[k] = detail_text[k]
 		
 		
 	return render(request, 'polls/detail.html', {'artist':artist, 'art_id': art_id, 'img_list':img_list, 'detail_text':detail_text})
