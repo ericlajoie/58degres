@@ -3,8 +3,36 @@
 
 {% block content %}
 {% load staticfiles %}
-<div class="container" style="height:100%">
-en ce moment ...
+
+<style>
+.event_title {
+width:100%;
+font-size:20px;
+text-align:center;
+}
+</style>
+
+<div class="container" style="height:100%;margin-top:150px">
+
+
+	<div class="col-md-12" style="">
+		{% for i in event_list %}
+		{% if forloop.counter0|divisibleby:3 %}
+		<div class="row">
+		{% endif %}
+		<div class="col-md-4"> 
+			<div class="event_title">{{ i.1 }}</div>
+			<img src="/static/en-ce-moment/{{i.0}}.jpg" style="width:100%;margin-bottom:20px" alt="{{i.0}}">
+		</div>
+		{% if forloop.counter|divisibleby:3 %}
+		</div>
+		{% endif %}
+		{% endfor %}
+
+	</div>
+	
+
+
 </div>
 
 {% endblock content %}

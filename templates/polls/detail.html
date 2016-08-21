@@ -9,7 +9,7 @@
 <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 90%;
+      width: 70%;
       margin: auto;
   }
   .txt_details {
@@ -31,11 +31,60 @@
 <div class="col-md-12">
 	<div class="col-md-2">
 		<div>
-			<a href="/art/{{artist}}"> <div class="header_menu_vertical"> << Retour </div></a>
+			<!--a href="/art/{{artist}}"> <div class="header_menu_vertical"> << Retour </div></a-->
+			<a href="/art/{{artist}}"> <img src="/static/img/gallerie/retour.png" style="width:50%"> </a>
 		</div>
-		<div class="txt_details">
-			{{detail_text}}
-		</div>
+		{% for i in detail_text %}
+			<div class="txt_details">
+				{{i}}
+			</div>
+		{% endfor %}
+			<div class="text_details">
+			Prix : {{detail_text.3}} €
+			</div>
+			
+			<div class="row" style="margin-top:55px">
+				<div class="col-md-6">
+					<div id='buy_button' style='margin-top:10px;'>
+						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="item_name" value="Ma carte postale">
+						<input type="hidden" name="item_number" value="123">
+						<input type="hidden" name="amount" value="2">
+						<input type="hidden" name="shipping" value="1,00">
+						<input type="hidden" name="currency_code" value="EUR">
+						<input type="hidden" name="return" value="http://young-reaches-7194.herokuapp.com/merci">
+						<input type="hidden" name="undefined_quantity" value="1">
+						<input type="hidden" name="lc" value="FR">
+						<input type="hidden" name="hosted_button_id" value="6RNT8A4HBBJRE">
+						<button type="submit" class="btn btn-default">
+							<span style="font-size:18px;color:#ec19b1"> J'achète </span> <i class="fa fa-arrow-circle-o-right fa-lg" style="vertical-align:middle;color:#ec19b1"></i>
+						</button>
+						</form>
+					</div> <!-- buy button-->
+				</div>
+
+				<div class="col-md-6">
+					<div id='cart_button' style='margin-top:10px;'>
+						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" target="paypal" method="post">
+						<input type="hidden" name="cmd" value="_cart">
+						<input type="hidden" name="item_name" value="Ma carte postale">
+						<input type="hidden" name="item_number" value="123">
+						<input type="hidden" name="add" value="1">
+						<input type="hidden" name="amount" value="2">
+						<input type="hidden" name="shipping" value="1,00">
+						<input type="hidden" name="currency_code" value="EUR">
+						<input type="hidden" name="return" value="http://young-reaches-7194.herokuapp.com/merci">
+						<input type="hidden" name="undefined_quantity" value="1">
+						<input type="hidden" name="lc" value="FR">
+						<input type="hidden" name="hosted_button_id" value="6RNT8A4HBBJRE">
+						<button type="submit" class="btn btn-default">
+							<span style="font-size:18px;color:#ec19b1"> Ajouter au panier </span> <i class="fa fa-shopping-basket fa-lg" style="vertical-align:middle;color:#ec19b1"></i>
+						</button>
+						</form>
+					</div> <!-- buy button-->
+				</div>
+			</div>
 	</div>
 	
 	<div class="col-md-10" style="margin-bottom:10px;">
@@ -46,7 +95,7 @@
 	{% if forloop.counter0 == 0 %}
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 	{% else %}
-    <li data-target="#myCarousel" data-slide-to="{{forloop.counter}}"></li>
+    <li data-target="#myCarousel" data-slide-to="{{forloop.counter0}}"></li>
 	{% endif %}
 	{% endfor %}
   </ol>
@@ -59,12 +108,12 @@
 	
 	{% if forloop.counter0 == 0 %}
 	<div class="item active">
-      <img src="/static/{{artist}}/{{art_id}}/{{i}}" alt="Chania">
+      <img src="/static/{{artist}}/{{art_id}}/{{i}}" alt="{{i}}">
     </div>
 	{% else %}
 	
     <div class="item">
-		<img src="/static/{{artist}}/{{art_id}}/{{i}}" alt="Chania">
+		<img src="/static/{{artist}}/{{art_id}}/{{i}}" alt="{{i}}">
     </div>
 	{% endif %}
 

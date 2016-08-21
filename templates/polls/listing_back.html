@@ -1,0 +1,79 @@
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+{% extends 'polls/base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+<style>
+.images a img {
+    opacity: 0.75;/* l'opacite que vous voulez au depart */
+    border: none;/* enlever les border d'une image en lien */
+    -ms-filter: "prodig:DXImageTransform.Microsoft.Alpha(Opacity=75)"; /* Hack IE8 */
+    filter: alpha(opacity = 75); /* Hack IE 5-7 */
+    -webkit-transition: opacity 0.5s ease-in-out;/* transition pour Chrome et Safari */
+    -moz-transition: opacity 0.5s ease-in-out;/* transition pour Firefox */
+    -o-transition: opacity 0.5s ease-in-out;/* transition pour Opéra */
+    transition: opacity 0.5s ease-in-out; /* on écrit cette ligne à la fin de façon à ce que ce soit elle qui soit prise en compte lorsque l'attribut transition sera pris en compte par tous les navigateurs */
+	border: 3px solid white;
+	
+}
+ 
+.images a:hover img, #images a:focus img {
+    opacity: 0.95; /* opacite au survol */
+    -ms-filter:"prodig:DXImageTransform.Microsoft.Alpha(Opacity=95)"; /* Hack IE 8 */
+    filter: alpha(opacity = 95); /* Hack IE 5-7 */
+	border: 3px solid #ec19b1;
+	
+ul.tree {
+     list-style-type: none;
+     background: url(/static/img/vline.png) repeat-y;
+     margin: 0;
+     padding: 0;
+   }
+   
+.tree ul {
+     margin-left: 10px;
+	 background: url(/static/img/vline.png) repeat-y;
+   }
+
+tree li {
+     margin: 0;
+     padding: 0 12px;
+   }
+}
+
+.a_li_vertical {margin-left:5px;}
+</style>
+
+<div id="listing" class="toggle_page" style="height:100%">
+
+	<div class="col-md-2" style="padding-top:15px">
+		<div style="vertical-align:top;display:inline-block">
+			<ul class="nav nav-pills nav-stacked"> <li><a href="/art/58deg"><div class="header_menu_vertical">58°Galbés</div></a></li> </ul>
+		</div>
+		<div>
+		<!--ul class="nav nav-pills nav-stacked" style="background: url(/static/img/vline.png) repeat-y;display:inline-block;padding-top:40px"-->
+		<ul class="nav nav-pills nav-stacked" style="display:inline-block;padding-top:0px">
+		
+			<li><a href="/art/clem" class="a_li_vertical"><div class="header_menu_vertical_small">Clem</div></a></li>
+			<li><a href="/art/loule" class="a_li_vertical"><div class="header_menu_vertical_small">Loule</div></a></li>
+			<li><a href="/art/tibs" class="a_li_vertical"><div class="header_menu_vertical_small">Tib's</div></a></li>
+			
+		</ul>
+		</div>
+	</div>
+	<div class="col-md-10" style="">
+		{% for i in project_list %}
+		{% if forloop.counter0|divisibleby:3 %}
+		<div class="row">
+		{% endif %}
+		<div class="col-md-4 images"> <a href="/art/{{artist}}/{{i}}/"> <img src="/static/{{artist}}/{{i}}.jpg" style="width:100%;margin-bottom:20px"></a></div>
+		{% if forloop.counter|divisibleby:3 %}
+		</div>
+		{% endif %}
+		{% endfor %}
+
+	</div>
+</div>
+
+
+{% endblock content %}

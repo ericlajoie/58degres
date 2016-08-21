@@ -5,11 +5,47 @@
 
 {% load staticfiles %}
 
-<div id="home" class="toggle_page" >
+<style>
+
+.livres{
+background-image:url('/static/img/gallerie/bouton_livres.png');
+}
+
+</style>
+
+
+<div id="home" class="toggle_page">
+
+	<div class="row" style="width:100%;margin-top:250px">
+		<div class="col-md-3 images-welcome">
+			<a href="/art/gallerie-livres"> <img  style="width:80%;margin-left:10%;" alt="livres" src='/static/img/gallerie/bouton_livres.png' onmouseover="this.src='/static/img/gallerie/bouton_posters.png'" onmouseout="this.src='/static/img/gallerie/bouton_livres.png'";> </a>
+			<!--a href="/art/gallerie-livres"> <div class="livres" style="width:80%;margin-left:10%;" > </a-->
+		</div>
+	
+		<div class="col-md-3 images-welcome">
+			<a href="/art/gallerie-posters"> <img src="{% static "img/gallerie/bouton_posters.png" %}" style="width:80%;margin-left:10%;" alt="posters"> </a>
+		</div>
+		
+		<div class="col-md-3 images-welcome">
+			<a href="/art/gallerie-cartes-postales"> <img src="{% static "img/gallerie/bouton_cartespostales.png" %}" style="width:80%;margin-left:10%;" alt="cartes-postales"> </a>
+		</div>
+	
+		<div class="col-md-3 images-welcome">
+			<a href="/art/gallerie-autres-trucs"> <img src="{% static "img/gallerie/bouton_autrestrucs.png" %}" style="width:80%;margin-left:10%;" alt="autres-trucs"> </a>
+		</div>
+	
+	</div>
+	
+	
+
+
+</div>
+
+<!--div id="home" class="toggle_page" >
 		<div class="col-md-8 col-md-offset-2" style="margin-bottom:30px">
 			<img src="{% static "img/accueil.jpg" %}" style="width:80%;margin-left:10%;"> 
 		</div>
 		<div class="col-md-2"></div>
-</div>
+</div-->
 
 {% endblock content %}
